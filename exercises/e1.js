@@ -6,6 +6,12 @@ import { data } from "../data/data";
 
 export function getPlanetNames(data) {
   // Your code goes here...
+  const nameArray = [];
+
+  data.planets.filter(function(sphere) {
+  nameArray.push(sphere.name);
+});
+  return nameArray;
 }
 
 

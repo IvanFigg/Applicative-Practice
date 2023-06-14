@@ -5,11 +5,10 @@ import { data } from "../data/data";
 // Return example: ['name1', 'name2', ... , 'nameN']
 
 export function getAsteroidsDiscoveredAfterYear(data, year) {
-  // Your code goes here...
+  return data.asteroids
+    .filter((sphere) => sphere.discoveryYear > year)
+    .map((sphere) => sphere.name);
 }
-
-
-
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-6"
 // If the test has all tests passed, switch to the next exercise file

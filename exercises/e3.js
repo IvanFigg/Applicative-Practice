@@ -5,10 +5,12 @@ import { data } from "../data/data";
 // Return example: [1, 2, ... , N]
 
 export function getAllAverageTemperatures(data) {
-  // Your code goes here...
+  const tempArray = [];
+
+  data.planets.filter(function (temp) {
+    tempArray.push(temp.avgTemp);
+  });
 }
-
-
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-3"
