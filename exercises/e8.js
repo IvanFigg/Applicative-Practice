@@ -4,18 +4,14 @@ import { data } from "../data/data";
 // Return a Planet name by a given moon name
 // Return example: 'Planet Name'
 
-export function getPlanetsNamesWithMoons(data, moonName) {
-  let rocks = data.planets
-    .filter(function (rock) {
-      if (rock.hasOwnProperty("moons")) {
-        return rock.moons;
-      }
+export function findPlanetNameByMoon(data, moonName) {
+  const rocks = Object.values(data.planets)
+    .filter((sphere) => {
+      return sphere.hasOwnProperty("moons") && sphere.moons.includes(moonName);
     })
-    .map(function (lilRocks) {
-      if (lilRocks.moons === moonName) {
-        return lilRocks;
-      }
-    });
+    .map((sphere) => sphere.name)
+    .reduce((sphere) => sphere.name);
+  return rocks;
 }
 
 // === TEST YOURSELF ===
