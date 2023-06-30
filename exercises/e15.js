@@ -5,10 +5,15 @@ import { data } from "../data/data";
 // Return example: ['name1', 'name2', ... , 'nameN']
 
 export function getPlanetsWithNoMoons(data) {
-  // Your code goes here...
+  const noMoons = data.planets
+    .map((sphere) => {
+      if (sphere.moonsCount === undefined || 0) {
+        return sphere.name;
+      }
+    })
+    .filter((sphere) => sphere);
+  return noMoons;
 }
-
-
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-15"

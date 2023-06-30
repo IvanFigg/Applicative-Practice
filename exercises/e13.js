@@ -5,10 +5,15 @@ import { data } from "../data/data";
 // Return example: 132.53
 
 export function getAveragePlanetsTemperature(data) {
-  // Your code goes here...
+  const avgTempo = data.planets
+    .filter((sphere) => {
+      return sphere.avgTemp;
+    })
+    .reduce(function (acc, sphere) {
+      return acc + sphere.avgTemp / data.planets.length;
+    }, 0);
+  return avgTempo;
 }
-
-
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-13"
