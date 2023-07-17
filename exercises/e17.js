@@ -9,21 +9,20 @@
  */
 
 export function minBy(array, cb) {
-  let firstVal = Infinity;
-  let minValue;
-  for (let i of array) {
-    let callVal = cb(i);
-    if (callVal < firstVal) {
-      firstVal = callVal;
-      minValue = i;
+  let minVal;
+  let firstVal = cb(array[0]);
+  for (let person of array) {
+    let dataVal = cb(person);
+    if (dataVal < firstVal) {
+      firstVal = dataVal;
+      minVal = person;
+    }
+    if (!cb(array)) {
+      return undefined;
     }
   }
-  return minValue;
+  return minVal;
 }
-
-// object.keys
-// object.values
-// object.entries
 
 export function maxBy(array, cb) {
   let firstVal = -Infinity;
