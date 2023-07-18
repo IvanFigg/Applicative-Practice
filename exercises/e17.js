@@ -17,8 +17,8 @@ export function minBy(array, cb) {
       firstVal = dataVal;
       minVal = person;
     }
-    if (!cb(array)) {
-      return undefined;
+    if (!cb(person)) {
+      minVal = undefined;
     }
   }
   return minVal;
