@@ -13,12 +13,11 @@ export function minBy(array, cb) {
   let firstVal = cb(array[0]);
   for (let person of array) {
     let dataVal = cb(person);
-    if (dataVal < firstVal) {
-      firstVal = dataVal;
-      minVal = person;
-    }
-    if (!cb(person)) {
-      minVal = undefined;
+    if (firstVal) {
+      if (dataVal < firstVal) {
+        firstVal = dataVal;
+        minVal = person;
+      }
     }
   }
   return minVal;
