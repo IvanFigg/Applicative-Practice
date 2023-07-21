@@ -10,15 +10,18 @@
 
 export function minBy(array, cb) {
   let minVal;
-  let firstVal = cb(array[0]);
-  for (let person of array) {
-    let dataVal = cb(person);
-    if (firstVal) {
+  if (Array.isArray(array) && array.length > 0) {
+    let firstVal = cb(array[0]);
+    for (let person of array) {
+      let ageVal = person.age;
+      let dataVal = cb(person);
       if (dataVal < firstVal) {
         firstVal = dataVal;
         minVal = person;
       }
     }
+  } else {
+    return undefined;
   }
   return minVal;
 }
