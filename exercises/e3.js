@@ -10,6 +10,7 @@ export function getAllAverageTemperatures(data) {
   data.planets.filter(function (temp) {
     tempArray.push(temp.avgTemp);
   });
+  return tempArray;
 }
 
 // === TEST YOURSELF ===
