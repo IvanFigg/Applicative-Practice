@@ -5,12 +5,7 @@ import { data } from "../data/data";
 // Return example: [1, 2, ... , N]
 
 export function getAllAverageTemperatures(data) {
-  const tempArray = [];
-
-  data.planets.filter(function (temp) {
-    tempArray.push(temp.avgTemp);
-  });
-  return tempArray;
+  return data.planets.map((sphere) => sphere.avgTemp);
 }
 
 // === TEST YOURSELF ===

@@ -5,12 +5,7 @@ import { data } from "../data/data";
 // Return example: ['name1', 'name2', ... , 'nameN']
 
 export function getAsteroidNames(data) {
-  const nameArray = [];
-
-  data.asteroids.filter(function (sphere) {
-    nameArray.push(sphere.name);
-  });
-  return nameArray;
+  return data.asteroids.map((sphere) => sphere.name);
 }
 
 // === TEST YOURSELF ===

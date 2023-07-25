@@ -6,15 +6,8 @@ import { data } from "../data/data";
 
 export function getPlanetNames(data) {
   // Your code goes here...
-  const nameArray = [];
-
-  data.planets.filter(function(sphere) {
-  nameArray.push(sphere.name);
-});
-  return nameArray;
+  return data.planets.map((planet) => planet.name);
 }
-
-
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-1"
