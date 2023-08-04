@@ -5,14 +5,9 @@ import { data } from "../data/data";
 // Return example: 132.53
 
 export function getAveragePlanetsTemperature(data) {
-  const avgTempo = data.planets
-    .filter((sphere) => {
-      return sphere.avgTemp;
-    })
-    .reduce(function (acc, sphere) {
-      return acc + sphere.avgTemp / data.planets.length;
-    }, 0);
-  return avgTempo;
+  return data.planets
+    .map((planet) => planet.avgTemp)
+    .reduce((temp, planet) => temp + planet / data.planets.length, 0);
 }
 
 // === TEST YOURSELF ===

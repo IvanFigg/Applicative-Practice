@@ -13,7 +13,6 @@ export function minBy(array, cb) {
   if (Array.isArray(array) && array.length > 0) {
     let firstVal = cb(array[0]);
     for (let person of array) {
-      let ageVal = person.age;
       let dataVal = cb(person);
       if (dataVal < firstVal) {
         firstVal = dataVal;
@@ -27,16 +26,13 @@ export function minBy(array, cb) {
 }
 
 export function maxBy(array, cb) {
-  let firstVal = -Infinity;
-  let chosenValue;
+  let firstVal = array[0];
   for (let i of array) {
-    let dataVal = cb(i);
-    if (dataVal > firstVal) {
-      firstVal = dataVal;
-      chosenValue = i;
+    if (cb(i) > cb(firstVal)) {
+      firstVal = i;
     }
   }
-  return chosenValue;
+  return firstVal;
 }
 
 // === TEST YOURSELF ===

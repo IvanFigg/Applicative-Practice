@@ -5,14 +5,9 @@ import { data } from "../data/data";
 // Return example: ['name1', 'name2', ... , 'nameN']
 
 export function getPlanetsWithNoMoons(data) {
-  const noMoons = data.planets
-    .map((sphere) => {
-      if (sphere.moonsCount === undefined || 0) {
-        return sphere.name;
-      }
-    })
-    .filter((sphere) => sphere);
-  return noMoons;
+  return data.planets
+    .filter((sphere) => sphere.moons === undefined || 0)
+    .map((sphere) => sphere.name);
 }
 
 // === TEST YOURSELF ===

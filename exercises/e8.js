@@ -5,13 +5,10 @@ import { data } from "../data/data";
 // Return example: 'Planet Name'
 
 export function findPlanetNameByMoon(data, moonName) {
-  const rocks = Object.values(data.planets)
-    .filter((sphere) => {
-      return sphere.hasOwnProperty("moons") && sphere.moons.includes(moonName);
-    })
-    .map((sphere) => sphere.name)
-    .reduce((sphere) => sphere.name);
-  return rocks;
+  const rocks = data.planets
+    .filter((sphere) => sphere.moons)
+    .find((sphere) => sphere.moons.includes(moonName));
+  return rocks.name;
 }
 
 // === TEST YOURSELF ===
